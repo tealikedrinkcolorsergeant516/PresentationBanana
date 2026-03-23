@@ -1,1 +1,0 @@
-/home/marek/PresentationBanana/commands/image-banana.md
